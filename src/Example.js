@@ -74,6 +74,51 @@ const posts = [
   {id: 2, title: 'Post 2: Installation', content: 'You can install React from npm.'}
 ];
 
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+      numberOfGuests: 2
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
+      <form>
+          <label>
+              Is going:
+              <input
+                  name="isGoing"
+                  type="checkbox"
+                  checked={this.state.isGoing}
+                  onChange={this.handleInputChange} />
+          </label>
+          <br />
+          <label>
+              Number of guests:
+              <input
+                  name="numberOfGuests"
+                  type="number"
+                  value={this.state.numberOfGuests}
+                  onChange={this.handleInputChange} />
+          </label>
+      </form>
+    );
+  }
+}
 
 class Example extends React.Component{
     render(){
@@ -83,6 +128,7 @@ class Example extends React.Component{
                 {element}
                 <Blog posts={posts} />
                 <NumberList numbers={[1, 3, 5]}/>
+                <Reservation />
             </div>
 
         );
