@@ -120,6 +120,7 @@ class Reservation extends React.Component {
   }
 }
 
+
 class Example extends React.Component{
     render(){
         return (
@@ -129,6 +130,7 @@ class Example extends React.Component{
                 <Blog posts={posts} />
                 <NumberList numbers={[1, 3, 5]}/>
                 <Reservation />
+                
             </div>
 
         );

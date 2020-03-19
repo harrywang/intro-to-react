@@ -5,6 +5,7 @@ import Clock from './Clock';
 import Toggle from './Toggle';
 import LoginControl from './LoginControl';
 import NameForm from './NameForm'
+import Calculator from './Calculator'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Toggle />
             <LoginControl />
             <NameForm />
+            <Calculator />
         </div>
 
     );
